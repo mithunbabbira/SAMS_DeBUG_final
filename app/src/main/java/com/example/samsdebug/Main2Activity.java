@@ -35,7 +35,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-        String url = "https://script.googleusercontent.com/macros/echo?user_content_key=pBJdLO_2Y07q9d1P_xsvzb8lKwaA66u79YXcbeg6_oEa7SLEAUhUrVVvw7X2EIdjfvcvRAwt-g3BME-Yo2ea5rCUGdER9Mi5OJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUYgU2M9v1oTwPFSc4eD-yLcD4N-rKgbIqUtiDktDvWx08QMdrsBNRJEHoB79eRjp75y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
+        String url = "https://script.googleusercontent.com/macros/echo?user_content_key=mtiRBNZPjH8LlBhIAaXcFF-tbGkl_Tke6KDH4s2gtlq3_8yGTeCMsqmW_crt2IWVA5HfiAT4RwySp1awpvxJm6CZ--bpMFrHOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUXbwfl4vKUFagc_f4QNM6dR4Lj4t8CH39sCVO2ZGMyEH3aAJF6OGQ8ogXUTGdbFrG5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -48,14 +48,18 @@ public class Main2Activity extends AppCompatActivity {
                     for (int i=0; i < jsonArray.length(); i++){
                         JSONObject student = jsonArray.getJSONObject(i);
                         String name = student.getString("Name");
-                        String laptop = student.getString("Laptop");
-                        int phone = student.getInt("phone_no");
+                        String laptop = student.getString("Laptop/Model");
+                        int phone = student.getInt("Phone_no");
                         String status = student.getString("Status");
-                        int idd = student.getInt("ID");
+                        int idd = student.getInt("DC_NO");
+                        int cost = student.getInt("Aprox_cost");
+                        String deliveryStatus = student.getString("Delivery_status");
+                        String paymentStatus = student.getString("Payment_status");
+
 
 
                         if (idd == id) {
-                            textView.append("Name : "+name + "\n " +"Model : "+ laptop + "\n"+"Phone : "+phone + "\n " +"Status : "+ status + "\n"+"ID :"+idd);
+                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n " +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n " +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
 //                            String.valueOf(phone)
                             }
 
