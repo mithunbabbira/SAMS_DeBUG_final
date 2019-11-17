@@ -27,8 +27,9 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         textView = findViewById(R.id.result);
-//        final String id = getIntent().getStringExtra("laptopId");// collecting from the previous screen (name should be exactly the same)
-       final int id = Integer.parseInt(getIntent().getStringExtra("laptopId"));// collecting from the previous screen (name should be exactly the same)
+
+//       final String id = getIntent().getStringExtra("laptopId");// collecting from the previous screen (name should be exactly the same)
+      final int id = Integer.parseInt(getIntent().getStringExtra("laptopId"));// collecting from the previous screen (name should be exactly the same)
 
 
         requestQueue = VolleySingleton.getInstance(this).getRequestQueue();
@@ -52,6 +53,7 @@ public class Main2Activity extends AppCompatActivity {
                         String laptop = student.getString("Laptop/Model");
                         String phone = student.getString("Phone_no");
                         String status = student.getString("Status");
+//                        String idd = student.getString("DC_NO");
                         int idd = student.getInt("DC_NO");
                         int cost = student.getInt("Aprox_cost");
                         String deliveryStatus = student.getString("Delivery_status");
@@ -60,23 +62,13 @@ public class Main2Activity extends AppCompatActivity {
 
 
                         if (idd == id) {
-                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
+                            textView.append("DC ID : "+idd+"\n"+"Name : "+name + "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
 //                            String.valueOf(phone)
+                            break;
+
+                        }else {
+                            textView.setText("Please enter valid ID");
                         }
-
-
-
-
-
-//                        if (idd == id) {
-//                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n " +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n " +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
-////                            String.valueOf(phone)
-//                            }
-
-
-
-
-
 
                     }
 
