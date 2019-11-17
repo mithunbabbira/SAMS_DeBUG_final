@@ -49,7 +49,7 @@ public class Main2Activity extends AppCompatActivity {
                         JSONObject student = jsonArray.getJSONObject(i);
                         String name = student.getString("Name");
                         String laptop = student.getString("Laptop/Model");
-                        int phone = student.getInt("Phone_no");
+                        String phone = student.getString("Phone_no");
                         String status = student.getString("Status");
                         int idd = student.getInt("DC_NO");
                         int cost = student.getInt("Aprox_cost");
@@ -59,9 +59,18 @@ public class Main2Activity extends AppCompatActivity {
 
 
                         if (idd == id) {
-                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n " +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n " +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
+                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
 //                            String.valueOf(phone)
-                            }
+                        }
+
+
+
+
+
+//                        if (idd == id) {
+//                            textView.append("DC ID :"+idd+"\n"+"Name : "+name + "\n " +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n " +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
+////                            String.valueOf(phone)
+//                            }
 
 
 
