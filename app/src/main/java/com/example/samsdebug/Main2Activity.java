@@ -28,8 +28,8 @@ public class Main2Activity extends AppCompatActivity {
 
         textView = findViewById(R.id.result);
 
-//       final String id = getIntent().getStringExtra("laptopId");// collecting from the previous screen (name should be exactly the same)
-      final int id = Integer.parseInt(getIntent().getStringExtra("laptopId"));// collecting from the previous screen (name should be exactly the same)
+       final String id = getIntent().getStringExtra("laptopId");// collecting from the previous screen (name should be exactly the same)
+//      final int id = Integer.parseInt(getIntent().getStringExtra("laptopId"));// collecting from the previous screen (name should be exactly the same)
 
 
         requestQueue = VolleySingleton.getInstance(this).getRequestQueue();
@@ -53,20 +53,21 @@ public class Main2Activity extends AppCompatActivity {
                         String laptop = student.getString("Laptop/Model");
                         String phone = student.getString("Phone_no");
                         String status = student.getString("Status");
-//                        String idd = student.getString("DC_NO");
-                        int idd = student.getInt("DC_NO");
+                        String idd = student.getString("DC_NO");
+//                        int idd = student.getInt("DC_NO");
                         int cost = student.getInt("Aprox_cost");
                         String deliveryStatus = student.getString("Delivery_status");
                         String paymentStatus = student.getString("Payment_status");
+                        //textView.append(id+idd+"\n");
 
 
+                        if (idd.equals(id)) {
 
-                        if (idd == id) {
                             textView.append("DC ID : "+idd+"\n"+"Name : "+name + "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
-//                            String.valueOf(phone)
-                            break;
+//
+                                 break;
 
-                        }else {
+                            }else{
                             textView.setText("Please enter valid ID");
                         }
 
@@ -79,18 +80,8 @@ public class Main2Activity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
             }
         });
-
         requestQueue.add(request);
-
-
-
-
-
-
-
-
     }
 }
