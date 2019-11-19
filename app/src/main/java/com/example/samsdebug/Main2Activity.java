@@ -3,6 +3,7 @@ package com.example.samsdebug;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private TextView textView;
+    private TextView name,dcID,model,phone,status,cost,delivery,payment,textView;
     private RequestQueue requestQueue;
 
     @Override
@@ -26,7 +27,21 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        textView = findViewById(R.id.result);
+        dcID = findViewById(R.id.dcID);
+        name = findViewById(R.id.name);
+        model = findViewById(R.id.model);
+        phone = findViewById(R.id.phone);
+        status = findViewById(R.id.status);
+        cost = findViewById(R.id.cost);
+        delivery = findViewById(R.id.delivery);
+        payment = findViewById(R.id.payment);
+        textView = findViewById(R.id.textView);
+
+        Toast toast = Toast.makeText(this,"LOADING", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+
+
 
        final String id = getIntent().getStringExtra("laptopId");// collecting from the previous screen (name should be exactly the same)
 //      final int id = Integer.parseInt(getIntent().getStringExtra("laptopId"));// collecting from the previous screen (name should be exactly the same)
@@ -49,13 +64,15 @@ public class Main2Activity extends AppCompatActivity {
                     JSONArray jsonArray = response.getJSONArray("Sheet1");
                     for (int i=0; i < jsonArray.length(); i++){
                         JSONObject student = jsonArray.getJSONObject(i);
-                        String name = student.getString("Name");
+                        String namee = student.getString("Name");
                         String laptop = student.getString("Laptop/Model");
-                        String phone = student.getString("Phone_no");
-                        String status = student.getString("Status");
+                        String phonee = student.getString("Phone_no");
+                        String statuss = student.getString("Status");
                         String idd = student.getString("DC_NO");
-//                        int idd = student.getInt("DC_NO");
-                        int cost = student.getInt("Aprox_cost");
+     //                        int idd = student.getInt("DC_NO");
+                        String costt = student.getString("Aprox_cost");
+
+
                         String deliveryStatus = student.getString("Delivery_status");
                         String paymentStatus = student.getString("Payment_status");
                         //textView.append(id+idd+"\n");
@@ -63,13 +80,25 @@ public class Main2Activity extends AppCompatActivity {
 
                         if (idd.equals(id)) {
 
-                            textView.append("DC ID : "+idd+"\n"+"Name : "+name + "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
-//
-                                 break;
+//                            textView.append("DC ID : "+idd+"\n"+"Name : "+name+ "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
 
-                            }else{
+
+                            dcID.append(idd+"  ");
+                            name.append(namee+"  ");
+                            model.append(laptop+"  ");
+                            phone.append(phonee+"  ");
+                            status.append(statuss+"  ");
+                            cost.append(costt+"  ");
+                            delivery.append(deliveryStatus+"  ");
+                            payment.append(paymentStatus+"  ");
+
+                            break;
+
+                            }else if(i+1 ==jsonArray.length()){
                             textView.setText("Please enter valid ID");
                         }
+
+
 
                     }
 
