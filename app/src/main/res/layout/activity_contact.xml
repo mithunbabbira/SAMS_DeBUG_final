@@ -37,6 +37,18 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/comp" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="316dp"
+        android:layout_height="79dp"
+        android:onClick="call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintVertical_bias="0.376"
+        app:srcCompat="@drawable/call" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
