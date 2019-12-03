@@ -22,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
 
     }
+
+    public void contact(View view){
+        Intent intent = new Intent(MainActivity.this,contact.class);
+        startActivity(intent);
+    }
+
     public void status(View view){
         String value = editText.getText().toString();// make use every format is collect ,so we convert to string
 

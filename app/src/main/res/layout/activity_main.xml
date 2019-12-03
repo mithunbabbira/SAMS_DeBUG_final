@@ -81,4 +81,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/comp" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="288dp"
+        android:layout_height="35dp"
+        android:onClick="contact"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status"
+        app:layout_constraintVertical_bias="0.369"
+        app:srcCompat="@drawable/contact" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

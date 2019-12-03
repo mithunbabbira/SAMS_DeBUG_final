@@ -2,8 +2,10 @@ package com.example.samsdebug;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +21,7 @@ import org.json.JSONObject;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private TextView name,dcID,model,phone,status,cost,delivery,payment,textView;
+    private TextView name,dcID,model,phone,status,cost,delivery,payment,textView,offer;
     private RequestQueue requestQueue;
 
     @Override
@@ -36,6 +38,9 @@ public class Main2Activity extends AppCompatActivity {
         delivery = findViewById(R.id.delivery);
         payment = findViewById(R.id.payment);
         textView = findViewById(R.id.textView);
+        offer = findViewById(R.id.offer);
+
+        offer.setSelected(true);
 
         Toast toast = Toast.makeText(this,"LOADING", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
@@ -112,5 +117,9 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
         requestQueue.add(request);
+    }
+    public void contact(View view){
+        Intent intent = new Intent(Main2Activity.this,contact.class);
+        startActivity(intent);
     }
 }
