@@ -80,13 +80,22 @@ public class Main2Activity extends AppCompatActivity {
 
                         String deliveryStatus = student.getString("Delivery_status");
                         String paymentStatus = student.getString("Payment_status");
+
+
+                        String offers = student.getString("Offer");
+                        offer.setText(offers);
+
+
                         //textView.append(id+idd+"\n");
+
+
 
 
                         if (idd.equals(id)) {
 
 //                            textView.append("DC ID : "+idd+"\n"+"Name : "+name+ "\n" +"Laptop/Model : "+ laptop + "\n"+"Phone : "+phone + "\n" +"Status : "+ status + "\n"+"Aprox cost : "+cost+"\n"+"Delivery status : "+deliveryStatus+"\n"+"Payment status : "+paymentStatus);
 
+                            offer.append(offers);
 
                             dcID.append(idd+"  ");
                             name.append(namee+"  ");
@@ -97,6 +106,8 @@ public class Main2Activity extends AppCompatActivity {
                             delivery.append(deliveryStatus+"  ");
                             payment.append(paymentStatus+"  ");
 
+
+
                             break;
 
                             }else if(i+1 ==jsonArray.length()){
@@ -106,6 +117,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
                     }
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -240,7 +240,7 @@
 
 
         android:singleLine="true"
-        android:text="Puthari offer .......... .... ....babababababababababa"
+        android:text="No offers available"
         android:textColor="#FAD02E"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
