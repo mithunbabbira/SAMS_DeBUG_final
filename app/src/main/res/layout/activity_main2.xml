@@ -9,15 +9,14 @@
 
 
     <TableLayout
-        android:id="@+id/demotable"
-        android:layout_width="402dp"
-        android:layout_height="299dp"
+         android:id="@+id/demotable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:padding="5dp"
-        android:stretchColumns="0,1"
-        android:visibility="visible"
+
+        android:padding="10dp"
+        android:stretchColumns="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
@@ -26,7 +25,7 @@
             <TextView
                 android:layout_margin="2dp"
                 android:background="#2F363F"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:padding="3dp"
                 android:text="DC ID"
                 android:textColor="@android:color/white"
@@ -36,7 +35,7 @@
                 android:id="@+id/dcID"
                 android:layout_margin="2dp"
                 android:background="#2F363F"
-                android:gravity="center"
+                android:gravity="center_horizontal"
                 android:padding="3dp"
                 android:text=""
                 android:textColor="@android:color/white"
@@ -218,8 +217,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="413dp"
-        android:layout_height="155dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -248,10 +247,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView5"
-        android:layout_width="328dp"
-        android:layout_height="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="28dp"
+        android:text="CONTACT US"
         android:onClick="contact"
         app:layout_constraintBottom_toTopOf="@+id/offer"
         app:layout_constraintEnd_toEndOf="parent"

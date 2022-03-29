@@ -105,19 +105,11 @@ public class Main2Activity extends AppCompatActivity {
                             cost.append(costt+"  ");
                             delivery.append(deliveryStatus+"  ");
                             payment.append(paymentStatus+"  ");
-
-
-
                             break;
-
                             }else if(i+1 ==jsonArray.length()){
                             textView.setText("Please enter valid ID");
                         }
-
-
-
                     }
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();

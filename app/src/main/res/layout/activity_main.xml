@@ -8,63 +8,53 @@
     tools:context=".MainActivity">
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:inputType="textCapCharacters"
-        android:textColor="#fff"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+<!--    <EditText-->
+
+
+<!--        android:id="@+id/editText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textCapCharacters"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#fff"-->
+<!--        android:textSize="25dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />-->
+
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
-
         android:text="Enter your ID"
         android:textAlignment="center"
-
-        android:textColor="#FF9800"
+        android:textColor="#959089"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
-    <ImageView
+    <Button
         android:id="@+id/status"
-        android:layout_width="372dp"
-        android:layout_height="62dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:onClick="status"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Get Status"
+        android:textAllCaps="false"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.287"
-        app:srcCompat="@drawable/button" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="217dp"
-        android:layout_height="34dp"
-        android:onClick="status"
-        app:layout_constraintBottom_toBottomOf="@+id/status"
-        app:layout_constraintEnd_toEndOf="@+id/status"
-        app:layout_constraintStart_toStartOf="@+id/status"
-        app:layout_constraintTop_toTopOf="@+id/status"
-        app:layout_constraintVertical_bias="0.583"
-        app:srcCompat="@drawable/logo" />
+
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="411dp"
+        android:layout_width="wrap_content"
         android:layout_height="181dp"
         android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,23 +65,48 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/comp" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView3"
-        android:layout_width="288dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
         android:onClick="contact"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="CONTACT US"
+        android:textAlignment="center"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status"
-        app:layout_constraintVertical_bias="0.369"
-        app:srcCompat="@drawable/contact" />
+        app:layout_constraintTop_toBottomOf="@+id/status" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        app:endIconMode="clear_text"
+        app:hintTextColor="@color/colorAccent"
+        android:padding="10dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInput"
+            android:inputType="textCapCharacters"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionGo"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

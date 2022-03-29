@@ -9,24 +9,23 @@
 
     <TextView
         android:id="@+id/editText2"
-        android:layout_width="397dp"
+        android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:ems="10"
-        android:gravity="start|top"
+        android:gravity="center"
         android:inputType="textMultiLine"
         android:text="Name:Mohan Babbira\nPhone:8088627778\nEmail:mailtobabbira@gmail.com"
         android:textColor="#fff"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.288" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="407dp"
+        android:layout_width="wrap_content"
         android:layout_height="93dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,11 +36,13 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/comp" />
 
-    <ImageView
+    <Button
         android:id="@+id/imageView6"
-        android:layout_width="316dp"
-        android:layout_height="79dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="call"
+        android:text="Click to call Mohan"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
